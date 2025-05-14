@@ -1,0 +1,157 @@
+Microsoft Windows [versão 10.0.26100.3915]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\adamd>cd proj_git
+
+C:\Users\adamd\proj_git>git init
+Reinitialized existing Git repository in C:/Users/adamd/proj_git/.git/
+
+C:\Users\adamd\proj_git>dir /a
+ O volume na unidade C é OS
+ O Número de Série do Volume é 3C63-0948
+
+ Pasta de C:\Users\adamd\proj_git
+
+14/05/2025  14:36    <DIR>          .
+14/05/2025  14:58    <DIR>          ..
+14/05/2025  15:13    <DIR>          .git
+14/05/2025  15:13                14 info.txt
+               1 arquivo(s)             14 bytes
+               3 pasta(s)   292.935.823.360 bytes disponíveis
+
+C:\Users\adamd\proj_git>git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   info.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   info.txt
+
+
+C:\Users\adamd\proj_git>git add info.txt
+
+C:\Users\adamd\proj_git>git commit -m "Primeiro commit"
+[main (root-commit) fb44702] Primeiro commit
+ 1 file changed, 4 insertions(+)
+ create mode 100644 info.txt
+
+C:\Users\adamd\proj_git>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\adamd\proj_git>git diff
+
+C:\Users\adamd\proj_git>git diff --name-only
+
+C:\Users\adamd\proj_git>git commit -m "Atualização 2"
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\adamd\proj_git>git log
+commit fb447022152aba19bd923b866c40b9b723851342 (HEAD -> main)
+Author: Adam Romão Dienstmann <adam-6856278@estudante.rs.gov.br>
+Date:   Wed May 14 15:14:50 2025 -0300
+
+    Primeiro commit
+
+C:\Users\adamd\proj_git>git log -p
+commit fb447022152aba19bd923b866c40b9b723851342 (HEAD -> main)
+Author: Adam Romão Dienstmann <adam-6856278@estudante.rs.gov.br>
+Date:   Wed May 14 15:14:50 2025 -0300
+
+    Primeiro commit
+
+diff --git a/info.txt b/info.txt
+new file mode 100644
+index 0000000..6132fb4
+--- /dev/null
++++ b/info.txt
+@@ -0,0 +1,4 @@
++
++
++
++dir /a
+
+C:\Users\adamd\proj_git>git checkout info.txt
+Updated 0 paths from the index
+
+C:\Users\adamd\proj_git>git reset --soft [hash]
+fatal: Cannot do soft reset with paths.
+
+C:\Users\adamd\proj_git>git reset --mixed [hash]
+warning: --mixed with paths is deprecated; use 'git reset -- <paths>' instead.
+
+C:\Users\adamd\proj_git>git reset --hard [hash]
+fatal: Cannot do hard reset with paths.
+
+C:\Users\adamd\proj_git>git config --global user.name "ad784"
+
+C:\Users\adamd\proj_git>git config --global user.email "adam-6856278@estudante.rs.gov.br"
+
+C:\Users\adamd\proj_git>git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.email=adam-6856278@estudante.rs.gov.br
+user.name=ad784
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=git@github.com:ad784/proj_git.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+
+C:\Users\adamd\proj_git>git remote add origin https://github.com/usuario/repositorio.git
+error: remote origin already exists.
+
+C:\Users\adamd\proj_git>git remote -v
+origin  git@github.com:ad784/proj_git.git (fetch)
+origin  git@github.com:ad784/proj_git.git (push)
+
+C:\Users\adamd\proj_git>git branch -M main
+
+C:\Users\adamd\proj_git>git push -u origin main
+The authenticity of host 'github.com (20.201.28.151)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\adamd\proj_git>git pull
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\adamd\proj_git>git clone https://github.com/usuario/repositorio.git
+Cloning into 'repositorio'...
+info: please complete authentication in your browser...
+remote: Repository not found.
+fatal: repository 'https://github.com/usuario/repositorio.git/' not found
+
+C:\Users\adamd\proj_git>
